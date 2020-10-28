@@ -2,8 +2,11 @@
 
     require '../config/funciones.php';
     require 'Persona.php';
+    //instanciamos
     $Persona = new Persona;
-
+    //asignamos valores a atributos
+    $Persona->setNombre('Rick');
+    $Persona->setApellido('Sánchez');
     mostrar($Persona);
 ?>
 <!doctype html>
