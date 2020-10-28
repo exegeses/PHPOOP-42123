@@ -7,6 +7,14 @@
         private $apellido;
 
         ## métodos
+        public function __construct($nombre, $apellido)
+        {
+            //inicializamos atributos
+            $this->setNombre($nombre);
+            $this->setApellido($apellido);
+        }
+        
+        
         public function verDatos()
         {
             $mensaje = 'Nombre: '.$this->getNombre();
@@ -45,6 +53,5 @@
         {
             $this->apellido = $apellido;
         }
-
 
     }
