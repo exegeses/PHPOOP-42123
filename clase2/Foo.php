@@ -25,6 +25,7 @@
             if ( !isset( self::$bar ) ){
                 self::$bar = new PDO();
             }
+            return self::$bar;
         }
     }
 
