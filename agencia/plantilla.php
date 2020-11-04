@@ -12,7 +12,7 @@
                 <a href="#" class="btn btn-lg btn-outline-secondary">más info.</a>
             </p>
 
-        </main>
+    </main>
 
 <?php
     include 'includes/footer.php';
