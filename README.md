@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/exegeses/PHPOOP-42123/main/oop.png"> 
+
 # PHPOOP-42123
 > Curso de PHP Object Oriented Programming |  
 > Miércoles 10hs (Arg) |  
