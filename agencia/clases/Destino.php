@@ -10,6 +10,20 @@
         private $destDisponibles;
         private $destActivo;
 
+        public function listarDestinos()
+        {
+            $link = Conexion::conectar();
+            $sql = "SELECT 
+                            destID, destNombre, 
+                            regID, 
+                            destPrecio, destAsientos, 
+                            destDisponibles 
+                        FROM destinos";
+            $stmt = $link->prepare($sql);
+            $stmt->execute();
+            $destinos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $destinos;
+        }
 
         ##################################
         ######  getters & setters
