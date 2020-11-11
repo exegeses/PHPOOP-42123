@@ -1,7 +1,6 @@
 <?php
 
     require 'config/config.php';
-
     include 'includes/over-all-header.html';
     include 'includes/nav.php';
 ?>
@@ -9,7 +8,7 @@
     <main class="container">
             <h1>Alta de una nueva región</h1>
 
-            <div class="alert bg-light border border-white shadow-sm border round p-4">
+            <div class="alert bg-light border border-white shadow round col-8 mx-auto p-4">
 
                 <form action="agregarRegion.php" method="post">
 
