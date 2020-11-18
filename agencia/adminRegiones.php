@@ -37,7 +37,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary">
+                        <a href="formEliminarRegion.php?regID=<?= $region['regID'] ?>" class="btn btn-outline-secondary">
                             Eliminar <i class="far fa-minus-square ml-1"></i>
                         </a>
                     </td>
