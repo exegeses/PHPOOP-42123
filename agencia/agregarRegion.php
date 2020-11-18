@@ -16,7 +16,7 @@
         $mensaje = 'No se pudo agregar la región';
         if( $chequeo ){
             $css = 'success';
-            $mensaje = 'Región: '.$Region->getRegNombre().' agregada corectamente.':
+            $mensaje = 'Región: '.$Region->getRegNombre().' agregada corectamente.';
         }
 ?>
             <div class="alert alert-<?= $css ?> shadow-sm p-4 col-6 mx-auto">
