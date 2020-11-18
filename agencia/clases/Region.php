@@ -49,6 +49,26 @@
             }
             return false;
         }
+
+        public function modificarRegion()
+        {
+            $regNombre = $_POST['regNombre'];
+            $regID = $_POST['regID'];
+            $link = Conexion::conectar();
+            $sql = "UPDATE regiones
+                        SET regNombre = :regNombre
+                        WHERE regID = :regID";
+            $stmt = $link->prepare($sql);
+            $stmt->bindParam(':regNombre', $regNombre, PDO::PARAM_STR);
+            $stmt->bindParam(':regID', $regID, PDO::PARAM_INT);
+            if( $stmt->execute() ){
+                //registramos atributos
+                $this->setRegID($regID);
+                $this->setRegNombre($regNombre);
+                return $this;
+            }
+            return false;
+        }
         
         ###############################
         ##### getters & setters #######
