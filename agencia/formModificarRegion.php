@@ -4,7 +4,7 @@
     require 'clases/Conexion.php';
     require 'clases/Region.php';
     $Region = new Region;
-    $datosRegion = $Region->verRegionPorID();
+    $Region->verRegionPorID();
     include 'includes/over-all-header.html';
     include 'includes/nav.php';
 ?>
@@ -19,9 +19,11 @@
                     <div class="form-group">
                     <label for="regNombre">Nombre de la región:</label>
                     <input type="text" name="regNombre" 
-                           value="<?= $datosRegion['regNombre'] ?>"
+                           value="<?= $Region->getRegNombre(); ?>"
                            id="regNombre" class="form-control">
                     </div>
+                    <input type="hidden" name="regID"
+                           value="<?= $Region->getRegID(); ?>">
 
                     <button class="btn btn-dark">Modificar región</button>
                     <a href="adminRegiones.php" class="btn btn-outline-secondary">

@@ -5,6 +5,7 @@
         private $destID;
         private $destNombre;
         private $regID;
+        static $regNombre;
         private $destPrecio;
         private $destAsientos;
         private $destDisponibles;
@@ -25,6 +26,34 @@
             $destinos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $destinos;
         }
+
+        public function verDestinoPorID()
+        {
+            $destID = $_GET['destID'];
+            $link = Conexion::conectar();
+            $sql = "SELECT 
+                            destID, destNombre, 
+                            d.regID, regNombre,
+                            destPrecio, destAsientos, 
+                            destDisponibles, destActivo 
+                        FROM destinos d, regiones r
+                        WHERE d.regID = r.regID
+                         AND  destID = ".$destID;
+            $stmt = $link->prepare($sql);
+            $stmt->execute();
+            $destino = $stmt->fetch(PDO::FETCH_ASSOC);
+            //registrar todos los atributos
+            $this->setDestID($destino['destID']);
+            $this->setDestNombre($destino['destNombre']);
+            $this->setRegID($destino['regID']);
+            self::setRegNombre($destino['regNombre']);
+            $this->setDestPrecio($destino['destPrecio']);
+            $this->setDestAsientos($destino['destAsientos']);
+            $this->setDestDisponibles($destino['destDisponibles']);
+            $this->setDestActivo($destino['destActivo']);
+            return $this;
+        }
+
 
         ##################################
         ######  getters & setters
@@ -76,6 +105,22 @@
             $this->regID = $regID;
         }
 
+        /**
+         * @return mixed
+         */
+        public static function getRegNombre()
+        {
+            return self::$regNombre;
+        }
+
+        /**
+         * @param mixed $regNombre
+         */
+        public static function setRegNombre($regNombre): void
+        {
+            self::$regNombre = $regNombre;
+        }
+        
         /**
          * @return mixed
          */

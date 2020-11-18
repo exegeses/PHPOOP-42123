@@ -24,8 +24,11 @@
                         WHERE regID = ".$regID;
             $stmt = $link->prepare($sql);
             $stmt->execute();
-            $region = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $region;
+            $datos = $stmt->fetch(PDO::FETCH_ASSOC);
+            // registrar los valores de los atributos
+            $this->setRegID($datos['regID']);
+            $this->setRegNombre($datos['regNombre']);
+            return $this;
         }
         
         ###############################
